@@ -46,7 +46,6 @@ pip install stable-baselines3 pandas matplotlib tqdm
 ### Step 3. 下载 G1 核心资产与动捕数据对齐
 进入本项目工作目录。在进行物理仿真前，需要拉取 Unitree G1 的原生 USD 模型文件，并将人类的动作捕捉数据清洗、重映射至 G1 的 25 维动作空间：
 ```bash
-运行
 # 下载/链接 G1 USD 模型资产至当前目录 (如已有 g1.usd 可跳过)
 # 注：此处假设通过软链接或下载脚本获取资产
 ln -s /path/to/your/unitree_g1_assets/g1.usd ./g1.usd
@@ -61,7 +60,6 @@ python process_amp_to_g1_4.py
 ### Step 4. 物理引擎与底层 PD 驱动测试
 双足人形机器人具有极高的不稳定性和复杂的运动学链。在进入神经网络端到端训练之前，必须首先验证所有关节的底层 PD 控制器是否正常映射与运作：
 ```bash
-运行
 # 运行底层物理验证与控制测试脚本
 python G1_control.py
 ```
